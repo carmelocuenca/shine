@@ -39,5 +39,10 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
 end
 
+group :development do
+  # Bundler-like DSL + rake tasks for Bower on Rails
+  gem 'bower-rails'
+end
+
 gem 'devise'
 
