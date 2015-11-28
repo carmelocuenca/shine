@@ -46,6 +46,10 @@ end
 
 gem 'devise'
 
+ # A library for generating fake data such as names, addresses, and phone numbers
+  gem 'faker' 
+  
+
 group :production do
   gem 'rails_12factor', '0.0.2'
 end
