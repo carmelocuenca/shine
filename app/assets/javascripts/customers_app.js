@@ -6,6 +6,10 @@ app.controller("CustomerSearchController", [
 		var page = 0;
 
 		$scope.search = function(searchTerm){
+			if (searchTerm.length < 3 ){
+				return;
+			}
+
 			$scope.searchedFor = searchTerm;
 
 			$http.get("/customers.json",
