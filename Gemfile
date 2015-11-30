@@ -37,6 +37,17 @@ group :development, :test do
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
+
+  # rspec-rails is a testing framework for Rails 3.x and 4.x.
+  gem 'rspec-rails'
+
+  # Poltergeist is a driver for Capybara
+  # It allows you to run your Capybara tests on a headless WebKit browser,
+  # provided by PhantomJS.
+  gem 'poltergeist'
+
+  # Database Cleaner is a set of strategies for cleaning your database in Ruby
+  gem 'database_cleaner'
 end
 
 group :development do
