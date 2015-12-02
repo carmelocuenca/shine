@@ -58,7 +58,7 @@ end
 gem 'devise'
 
  # A library for generating fake data such as names, addresses, and phone numbers
-  gem 'faker' 
+gem 'faker' 
   
 
 group :production do
