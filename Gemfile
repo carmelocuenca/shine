@@ -37,7 +37,9 @@ group :development, :test do
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
+end
 
+group :test do
   # rspec-rails is a testing framework for Rails 3.x and 4.x.
   gem 'rspec-rails'
 
@@ -48,11 +50,16 @@ group :development, :test do
 
   # Database Cleaner is a set of strategies for cleaning your database in Ruby
   gem 'database_cleaner'
+
+  gem 'phantomjs', '~> 1.9', '>= 1.9.8.0'
 end
 
 group :development do
   # Bundler-like DSL + rake tasks for Bower on Rails
   gem 'bower-rails'
+
+  # Teaspoon is a Javascript test runner built for Rails
+  gem 'teaspoon-jasmine'
 end
 
 gem 'devise'
