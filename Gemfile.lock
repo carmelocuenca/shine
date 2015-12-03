@@ -1,3 +1,8 @@
+PATH
+  remote: ./vendor/phantomjs-gem
+  specs:
+    phantomjs (1.9.8.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -94,7 +99,6 @@ GEM
       mini_portile (~> 0.6.0)
     orm_adapter (0.5.0)
     pg (0.18.4)
-    phantomjs (1.9.8.0)
     poltergeist (1.8.1)
       capybara (~> 2.1)
       cliver (~> 0.3.1)
@@ -208,7 +212,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   pg
-  phantomjs (~> 1.9, >= 1.9.8.0)
+  phantomjs!
   poltergeist
   rails (= 4.2.0)
   rails_12factor (= 0.0.2)
