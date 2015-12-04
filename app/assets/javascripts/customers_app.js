@@ -5,6 +5,7 @@ app.controller("CustomerSearchController", [
 	function($scope, $http){
 		var page = 0;
 
+		$scope.customers = [];
 		$scope.search = function(searchTerm){
 			if (searchTerm.length < 3 ){
 				return;
@@ -18,7 +19,7 @@ app.controller("CustomerSearchController", [
 				$scope.customers = data;
 			}).
 			error(function(data, status, header, config){
-				alert("There was a problem:" + status);
+				alert("There was a problem: " + status);
 			});
 		};
 
