@@ -67,7 +67,12 @@ gem 'devise'
 
  # A library for generating fake data such as names, addresses, and phone numbers
 gem 'faker' 
-  
+
+# Use your angular templates with rails' asset pipeline 
+gem "angular-rails-templates"
+
+# version 3.x breaks angular-rails-templates
+gem "sprockets", "~> 2.0" 
 
 group :production do
   gem 'rails_12factor', '0.0.2'
