@@ -6,7 +6,7 @@ namespace :db do
 end
 
 def make_customers
-  4096.times do |i|
+  350_000.times do |i|
   Customer.where(first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     username: "#{Faker::Internet.user_name}#{i}",

@@ -2,7 +2,7 @@
   <h1 class="h2">Customers Search</h1>
 </header>
 
-<div ng-controller="CustomerSearchController">
+<div>
 
 <section class="search-form">
   	<form>
@@ -42,6 +42,9 @@
 	        {{ customer.first_name }} {{  customer.last_name }}
 	        <small>{{ customer.username }}</small>
 	       </h2>
+	       <div class="pull-right">
+	        <button class="btn btn-small btn-primary" ng-click="viewDetails(customer)">View Details...</button>
+	      </div>
 	      <h4>{{ customer.email }}</h4>
 	    </li>
 	</ol>
