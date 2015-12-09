@@ -50,7 +50,6 @@ app.controller("CustomerSearchController", [
 		};
 
 		$scope.viewDetails = function(customer){
-			alert("a ver");
 			$location.path("/" + customer.id);
 		};
 	}
