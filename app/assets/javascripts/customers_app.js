@@ -1,5 +1,5 @@
 var app = angular.module('customers',
-	['ngRoute', 'ngResource', 'templates']);
+	['ngRoute', 'ngResource', 'ngMessages', 'templates']);
 
 app.config([
   "$routeProvider",
@@ -63,6 +63,15 @@ app.controller("CustomerDetailController", [
 		$scope.customerId = $routeParams.id;
 		var Customer = $resource('/customers/:customerId.json');
 		$scope.customer = Customer.get({"customerId": $scope.customerId});
+
+		$scope.save = function() {
+
+			alert($scope.form.$invalid + " " + $scope.form.$pristine);
+
+			if ($scope.form.$valid) {
+				alert("Save!");
+			}
+		}
 	}
 	]);
 
