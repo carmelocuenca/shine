@@ -1,0 +1,43 @@
+
+var app = angular.module("customers");
+
+app.controller("CustomerSearchController", [
+	"$scope", "$http", "$location",
+	function($scope, $http, $location){
+		var page = 0;
+
+		$scope.customers = [];
+		$scope.search = function(searchTerm){
+			if (searchTerm.length < 3 ){
+				return;
+			}
+
+			$scope.searchedFor = searchTerm;
+
+			$http.get("/customers.json",
+				{ params: { "keywords": searchTerm, "page": page } }).
+			success( function(data, status, header, config){
+				$scope.customers = data;
+			}).
+			error(function(data, status, header, config){
+				alert("There was a problem: " + status);
+			});
+		};
+
+		$scope.previousPage = function(){
+			if (page > 0){
+				page = page - 1;
+				$scope.search($scope.keywords);
+			};
+		};
+
+		$scope.nextPage = function(){
+			page = page + 1;
+			$scope.search($scope.keywords);
+		};
+
+		$scope.viewDetails = function(customer){
+			$location.path("/" + customer.id);
+		};
+	}
+	]);
