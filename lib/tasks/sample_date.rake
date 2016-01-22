@@ -65,7 +65,7 @@ State.create!(name: "Wyoming" , code: "WY")
 end
 
 def make_customers
-  1_000_000.times do |i|
+  1_024.times do |i|
     Customer.where(first_name: Faker::Name.first_name,
       last_name: Faker::Name.last_name,
       username: "#{Faker::Internet.user_name}#{i}",
