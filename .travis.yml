@@ -20,6 +20,6 @@ deploy:
   provider: heroku
   api_key:
     secure: L75/aDNm3yF+vsdc5VpIybutF6QJS0Tgk84SX6/W47ppu0uS5VrhP70yD7UoUdJCIAZBWFIGURSjSuNODX95UJGPhal1Tjcwt7ZmiuVlhA9AA9xTRTTdvk/8eONc0XquxzyA790kuL5LxZkGlpDiSi6sKu+b2j4UU/F5EeajLcMN1pmd5liqeWYsR+FX+z5aKNarUcofwrIoIkFOzpEqCsQnPHOnK+wQ9aUhfS2+dsG1PUcfyxOUtFw4YZhOppioEirr9rSBZ5unw2c+i8zLQsF7Hx9zAkB7QCczqm4s70phcsjRJBpFOpa6oAMVw3iDMh2ey28x8fVVWvRalsAA6jsXHu+zV+qf0RKdMJuMkbEzMNS7da5DcRHFnxV83o02nLoTZrnnMaRftvBbvqq63QeMsH5HNSEVV7cqaTPbkJnJ5fNz+FQy7pG4PJfsPhK6fbbtoINeaSrnGHBst5sld9CM9l7T9pRbIRao00XoH9TZeEf8MY0Ztwj37Exg7BHYKUYLx+tMYEh6DEs4M25wDK1bZ/jS/NANSb2vB7+JDU5ej3V8VhdVPv0Ar8IijSIFpYIX37zheiHtVHha2bbloxkUNDlxxLrmfshDnVglyQyDph6z/ogQL+S1/iLCfvNooHtZ7iQX/fVtlThZIssGdthx6UZO97MfguB3s/YePRo=
-  app: shine
+  app: mighty-scrubland-81272
   on:
     repo: carmelocuenca/shine
