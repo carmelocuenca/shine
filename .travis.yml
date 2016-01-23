@@ -8,7 +8,8 @@ services:
   - postgresql
   
 before_install:
-  - sudo apt-get update -qq && sudo apt-get -qq -y upgrade
+  - sudo apt-get update -qq
+  - yes | sudo apt-get -qq upgrade
   - sudo apt-get install -qq build-essential g++ flex bison gperf ruby perl \
       libsqlite3-dev libfontconfig1-dev libicu-dev libfreetype6 libssl-dev \
       libpng-dev libjpeg-dev python libx11-dev libxext-dev ttf-mscorefonts-installer
