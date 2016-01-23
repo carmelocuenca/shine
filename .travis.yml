@@ -7,8 +7,6 @@ addons:
 services:
 - postgresql
 
-before_install:
-- sudo apt-get update -qq
 
 before_script:
 - cp config/database.yml.travis config/database.yml
