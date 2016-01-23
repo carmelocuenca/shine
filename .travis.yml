@@ -8,10 +8,14 @@ services:
   - postgresql
   
 before_install:
-  # - sudo apt-get update -qq
-  # - sudo apt-get install -qq wget curl bunzip2 tar
-    
-# By default, the build environment will have version 9.1 running already.
+  - sudo apt-get update -qq
+  - sudo apt-get install -qq install build-essential g++ flex bison gperf ruby perl \
+      libsqlite3-dev libfontconfig1-dev libicu-dev libfreetype6 libssl-dev \
+      libpng-dev libjpeg-dev python libx11-dev libxext-dev ttf-mscorefonts-installer
+  - git clone --recurse-submodules git://github.com/ariya/phantomjs.git
+  - cd phantomjs
+  - ./build.py --jobs 1
+  
 before_script:
   - cp config/database.yml.travis config/database.yml
   - psql -c 'create database travis_ci_test;' -U postgres
