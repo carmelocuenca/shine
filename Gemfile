@@ -51,7 +51,7 @@ group :test do
   # Database Cleaner is a set of strategies for cleaning your database in Ruby
   gem 'database_cleaner'
 
-  gem 'phantomjs', path: './vendor/phantomjs-gem'
+  gem 'phantomjs' #, path: './vendor/phantomjs-gem'
 
 end
 
