@@ -2,7 +2,11 @@ language: ruby
 rvm:
   - 2.1.0
 bundler_args: --without production
-
+addons:
+  postgresql: "9.4.1"
+services:
+  - postgresql
+  
 before_install:
   # - sudo apt-get update -qq
   # - sudo apt-get install -qq wget curl bunzip2 tar
