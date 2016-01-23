@@ -19,7 +19,7 @@ before_script:
 
 script:
   - bundle exec rspec
-  - bundle exec rake teaspoon
+  - bundle exec teaspoon
 
 notifications:
   email:
