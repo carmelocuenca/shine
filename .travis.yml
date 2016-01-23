@@ -6,25 +6,18 @@ addons:
   postgresql: '9.3'
 services:
 - postgresql
-
-
 before_script:
 - cp config/database.yml.travis config/database.yml
 - psql -c 'create database travis_ci_test;' -U postgres
 - RAILS_ENV=test bundle exec rake db:migrate --trace
 script:
 - bundle exec rspec
-
 notifications:
   email:
     on_success: always
     on_failure: always
-    
 deploy:
   provider: heroku
   api_key:
-    secure: SwTrPwnuQv7ZFGH1DXUjk8aPpHj2ZZXeSNjtzO8YIE0fuCz/Wo0opHDnOaWKptWFiuptEiBPy4u8qujWcSXXn5UjXXs/bwh/5uo7oEMg90uXAjX7QSWLUREHxYlehbMTQ3NqzurWQZynT2n/2OKIZ6oVuZl6Kgbh6Q/fanO5v+FJ9VrGy0vns1bds+SPXiCnVMnyHBKoaPFV6lsi3XJStondwb6IY+24xV78V4kknoo6Z41PcrBNmhkHgDnSWpvl6ro7u01IBE1//nGGBNlqSlefC2VMmgygV4d3X4xdKFJyN93LBalnl+HmfEcxblqqnoD10FQ3ZwtzkZZrIZ7f7oPZk8lVA0pkOkt/h9MW4RMscKxNaLB8VW6LXTKR0RdPwA9v1WPO2XOqSuFsqtXGOM+D9l0R3d0Wn5BiGorzdR+sH1y229jWJMOH/XRq6uDccAIb/3ffQwOsFdThhWMkrS/Vq0sOG+QnlajVcOM/JOQZ5PwFCEUGbwVKJjq/6Cqg0mjckI+e+3CnfJ/ABa60UQfpJn65fDjSeo77douXFHPipuO1veRzQ5bdPr9egma+qeO2I08N9FxwJT+fQrBzXLKrsAxsYvPsxfsbRFZa53XrOwpqhPEiQO16TfR0urRlCep5SLA2MwtChr4If/1YC2bSUCw8uPuxmEPgyt+hDjA=
+    secure: k+oStJD3lG7Acuga1n4EDRMnYFFcBNcW6qG0HDdsLgGUsffINtF6Z+050Elj1OrF38t/VYaLWIWXI2ANt48qZ6tlzS1EBTZ30+bOs0OSkBkltuQUZheA+2sxIH859vzaczOx0emeoFPIBeySaIMyvkuNeAaRRMVzwvsQrHdH37RxgXCd9t1fc7WcYB2bIqDyk/Smog9PQMN8bYEZrtJaNOdgkVTVRIpvUa3XQtyL9P+YeHKhDMnf31vb1Zo+G2c0aChbBKPi+DaajMyoasbWtNJYrITFROwKcsvmF5RH+BhIgjKBU0r4CGGVewK2+mXCQqtunRiL0hVMm1X2ziLGMuoMtoNzEEq1ONtC1CCt1R94vczulX5aW1Q6Vbbclabe2bGzp/t0hRqcMqJ6Fm2ZVo/5W0LaIQxiJ11x8Lf45Z3f5oD56Kl6SgNBu5j0bke/JkF3XaF4dm61TLBqAHMU9jYBYfVr8iVbRiwPh77MJm9/Ot5HjR3A/U6uEEwvrgTbtEBdYem8ePObTWPmVn0J/pIWefn86aQo7xwjxLAD5LCDjmwzcFkzOME1DwEsI5KVPP94XqyGPYEJ2ypTIQma0Smd0S3H+xqsTFJSCZuE7i7cwiXGWvWsK4yBqyUW9xGZndUUiaopz+kL+Akrhjui3nlCbQjEtElbjmNfvcp492k=
   app: shine
-  on:
-    repo: carmelocuenca/shine
-  run: "rake db:migrate"
