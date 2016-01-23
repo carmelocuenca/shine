@@ -61,6 +61,8 @@ group :development do
 
   # Teaspoon is a Javascript test runner built for Rails
   gem 'teaspoon-jasmine'
+  
+  gem 'travis'
 end
 
 gem 'devise'

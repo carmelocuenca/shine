@@ -1,25 +1,32 @@
 language: ruby
 rvm:
-  - 2.0.0
-bundler_args: --without production
+- 2.0.0
+bundler_args: "--without production"
 addons:
-  postgresql: "9.3"
+  postgresql: '9.3'
 services:
-  - postgresql
-  
-before_install:
-  - sudo apt-get update -qq
-  
-before_script:
-  - cp config/database.yml.travis config/database.yml
-  - psql -c 'create database travis_ci_test;' -U postgres
-  - RAILS_ENV=test bundle exec rake db:migrate --trace
+- postgresql
 
+before_install:
+- sudo apt-get update -qq
+
+before_script:
+- cp config/database.yml.travis config/database.yml
+- psql -c 'create database travis_ci_test;' -U postgres
+- RAILS_ENV=test bundle exec rake db:migrate --trace
 script:
-  - bundle exec rspec
-  # - bundle exec teaspoon
+- bundle exec rspec
 
 notifications:
   email:
     on_success: always
     on_failure: always
+    
+deploy:
+  provider: heroku
+  api_key:
+    secure: SwTrPwnuQv7ZFGH1DXUjk8aPpHj2ZZXeSNjtzO8YIE0fuCz/Wo0opHDnOaWKptWFiuptEiBPy4u8qujWcSXXn5UjXXs/bwh/5uo7oEMg90uXAjX7QSWLUREHxYlehbMTQ3NqzurWQZynT2n/2OKIZ6oVuZl6Kgbh6Q/fanO5v+FJ9VrGy0vns1bds+SPXiCnVMnyHBKoaPFV6lsi3XJStondwb6IY+24xV78V4kknoo6Z41PcrBNmhkHgDnSWpvl6ro7u01IBE1//nGGBNlqSlefC2VMmgygV4d3X4xdKFJyN93LBalnl+HmfEcxblqqnoD10FQ3ZwtzkZZrIZ7f7oPZk8lVA0pkOkt/h9MW4RMscKxNaLB8VW6LXTKR0RdPwA9v1WPO2XOqSuFsqtXGOM+D9l0R3d0Wn5BiGorzdR+sH1y229jWJMOH/XRq6uDccAIb/3ffQwOsFdThhWMkrS/Vq0sOG+QnlajVcOM/JOQZ5PwFCEUGbwVKJjq/6Cqg0mjckI+e+3CnfJ/ABa60UQfpJn65fDjSeo77douXFHPipuO1veRzQ5bdPr9egma+qeO2I08N9FxwJT+fQrBzXLKrsAxsYvPsxfsbRFZa53XrOwpqhPEiQO16TfR0urRlCep5SLA2MwtChr4If/1YC2bSUCw8uPuxmEPgyt+hDjA=
+  app: shine
+  on:
+    repo: carmelocuenca/shine
+  run: "rake db:migrate"
