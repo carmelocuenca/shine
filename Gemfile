@@ -37,6 +37,9 @@ group :development, :test do
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
+  
+  # Teaspoon is a Javascript test runner built for Rails
+  gem 'teaspoon-jasmine'
 end
 
 group :test do
@@ -59,9 +62,6 @@ end
 group :development do
   # Bundler-like DSL + rake tasks for Bower on Rails
   gem 'bower-rails'
-
-  # Teaspoon is a Javascript test runner built for Rails
-  gem 'teaspoon-jasmine'
   
   gem 'travis'
 end
